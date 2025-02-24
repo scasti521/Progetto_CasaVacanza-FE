@@ -1,0 +1,102 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Colonna sinistra: Form di Prenotazione -->
+    <div class="col-md-3 d-flex flex-column align-items-center">
+      <div class="custom-card depth-effect w-100">
+        <h2 class="text-center">Prenota</h2>
+        <form [formGroup]="formPrenotazione" (ngSubmit)="prenota()">
+          <div class="form-group">
+            <label for="numeroPersone" class="form-label">Numero di Persone</label>
+            <select id="numeroPersone" class="form-control" formControlName="numeroPersone">
+              <option *ngFor="let i of [].constructor(casaVacanza.postiLetto + 1); let index = index" [value]="index">
+                {{ index }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dataInizio" class="form-label">Data Inizio</label>
+            <input type="date" id="dataInizio" class="form-control" formControlName="dataInizio" />
+          </div>
+          <div class="form-group">
+            <label for="dataFine" class="form-label">Data Fine</label>
+            <input type="date" id="dataFine" class="form-control" formControlName="dataFine" />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Prenota</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Colonna centrale: Dettagli Casa Vacanza -->
+    <div class="col-md-6 d-flex align-items-stretch">
+      <div class="custom-card centralgio.castiglione shadow-lg w-100 depth-effect p-4">
+        <h2 class="text-center mb-4">Dettagli della Casa</h2>
+        <div class="image-container text-center mb-4">
+          <img [src]="casaVacanza.immagine" class="img-fluid img-border" alt="Immagine casa">
+        </div>
+        <table class="table table-hover details-table">
+          <thead>
+          <tr>
+            <th colspan="2" class="text-center bg-info text-white">Informazioni</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th class="bg-light">Descrizione</th>
+            <td>{{casaVacanza.descrizione}}</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Indirizzo</th>
+            <td>{{casaVacanza.indirizzo}}</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Città</th>
+            <td>{{casaVacanza.citta}}</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Regione</th>
+            <td>{{casaVacanza.regione}}</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Prezzo</th>
+            <td>{{casaVacanza.prezzo}} €</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Posti Letto</th>
+            <td>{{casaVacanza.postiLetto}}</td>
+          </tr>
+          <tr>
+            <th class="bg-light">Disponibile</th>
+            <td>{{casaVacanza.disponibile ? 'Sì' : 'No'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+
+    <!-- Colonna destra: Annunci Pubblicitari -->
+    <div class="col-md-3 d-flex flex-column align-items-center">
+      <div class="custom-card depth-effect w-100">
+        <div class="card-body text-center">
+          <h2 class="card-title mb-4">Annunci</h2>
+
+          <!-- Primo Annuncio: Banner Statico -->
+          <div class="ad mb-4">
+            <img src="https://via.placeholder.com/300x250?text=Annuncio+1" alt="Annuncio 1" class="img-fluid rounded">
+            <p class="mt-2">Promuovi il tuo prodotto qui! <a href="mailto:info@tuosito.com">Contattaci</a>.</p>
+          </div>
+
+          <!-- Secondo Annuncio: Programma di Affiliazione -->
+          <div class="ad">
+            <a href="https://www.booking.com/index.html?aid=123456" target="_blank">
+              <img src="https://via.placeholder.com/300x250?text=Offerta+Booking" alt="Offerta Booking" class="img-fluid rounded">
+            </a>
+            <p class="mt-2">Prenota ora e risparmia con Booking.com!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

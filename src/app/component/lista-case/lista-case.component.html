@@ -1,0 +1,25 @@
+<div class="container my-5 p-4 border rounded shadow-lg bg-light">
+  <!-- Titolo -->
+  <div class="text-center mb-4">
+    <h3 class="text-primary fw-bold border-bottom pb-3 d-flex justify-content-center align-items-center">
+      <!-- Titolo della lista -->
+      <span class=".col-md-3"><i class="bi bi-house-door-fill"></i> Lista Case</span>
+
+      <!-- Icona per aggiungere casa -->
+      <a routerLink="/add-casa" *ngIf="ruolo" class="text-primary ms-3">
+        <i class="bi bi-house-add"></i>
+      </a>
+    </h3>
+    <p class="text-muted">Esplora la nostra selezione di case vacanza</p>
+  </div>
+
+
+
+  <!-- Lista delle card -->
+  <div class="row g-4">
+    <!-- Singola card -->
+    <div *ngFor="let casa of case" class="col-12 col-sm-6 col-md-4">
+        <app-casa-card [casa]="casa" ></app-casa-card>
+    </div>
+  </div>
+</div>

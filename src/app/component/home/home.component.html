@@ -1,0 +1,15 @@
+<section class="home">
+  <div class="container">
+    <header class="jumbotron text-center my-5">
+      <h1 class="display-4">Benvenuto nel mio sito Web!</h1>
+      <p class="lead">Qui puoi trovare la casa perfetta per te</p>
+      <div class="d-flex justify-content-center" *ngIf="!isLoggedIn">
+        <a class="btn btn-secondary " routerLink="/login" role="button">Login</a>
+      </div>
+      <hr>
+    </header>
+  </div>
+  <div>
+    <app-lista-case></app-lista-case>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="d-flex flex-wrap justify-content-start">
+  <div class="card card-custom shadow-sm m-2" style="width: 18rem;">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="card-title text-primary fw-bold">{{prenotazione.casaVacanza?.nome}}</h5>
+        <button class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" type="button" (click)="elimina()">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+      <p class="card-text text-muted"><strong>Utente:</strong> {{prenotazione.utente?.nome}}</p>
+      <p class="card-text text-muted"><strong>Data Inizio:</strong> {{prenotazione.dataInizio | date:'dd/MM/yyyy'}}</p>
+      <p class="card-text text-muted"><strong>Data Fine:</strong> {{prenotazione.dataFine | date:'dd/MM/yyyy'}}</p>
+      <p class="card-text text-muted"><strong>Numero Persone:</strong> {{prenotazione.numeroPersone}}</p>
+      <p class="card-text text-muted"><strong>Prezzo:</strong> {{prenotazione.prezzoTotale | currency:'EUR'}}</p>
+      <div *ngIf="ruolo" class="d-flex justify-content-between mt-3">
+        <button class="btn btn-warning d-inline-flex align-items-center" type="button">
+          <i class="bi bi-pencil me-1"></i>
+          <span>Modifica</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card card-custom shadow-sm h-100">
+  <div class="card-body">
+    <h5 class="card-title text-primary fw-bold">{{utente.nome}} {{utente.cognome}}</h5>
+    <p class="card-text text-muted">Username: {{utente.username}}</p>
+    <div *ngIf="ruolo">
+      <button class="btn btn-warning w-100 mt-3 d-inline-flex align-items-center" type="button" (click)="navigateToEdit()">
+        <i class="bi bi-pencil me-1"></i>
+        <span>Modifica</span>
+      </button>
+      <button class="btn btn-danger w-100 mt-3 d-inline-flex align-items-center" type="button" (click)="elimina()">
+        <i class="bi bi-trash me-1"></i>
+        <span>Elimina</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="card card-custom shadow-sm h-100"  (click)="openModal(casa.id)">
+  <img src="{{casa.immagine}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-primary fw-bold">{{casa.nome}}</h5>
+    <p class="card-text text-muted">{{casa.descrizione}}</p>
+    <div>
+      <a *ngIf="ruolo" (click)="elimina($event, casa.id)" class="btn btn-danger w-100 mt-3">Elimina</a>
+      <a *ngIf="ruolo" (click)="navigateToEdit($event)" class="btn btn-warning w-100 mt-3">Modifica</a>
+      <button *ngIf="isLoggedIn" class="btn btn-primary w-100 mt-3" (click)="prenota($event, casa)">Prenota</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="casaModal{{casa.id}}" tabindex="-1" aria-labelledby="casaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="casaModalLabel">{{casa.nome}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{casa.immagine}}" class="img-fluid mb-3 rounded" alt="Immagine casa">
+        <div class="row">
+          <div class="col-6">
+            <strong>Descrizione:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.descrizione}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Indirizzo:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.indirizzo}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Città:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.citta}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Regione:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.regione}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Prezzo:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.prezzo}} €</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Posti Letto:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.postiLetto}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Disponibile:</strong>
+          </div>
+          <div class="col-6">
+            <span>{{casa.disponibile ? 'Sì' : 'No'}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

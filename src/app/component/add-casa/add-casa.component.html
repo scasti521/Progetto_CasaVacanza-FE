@@ -1,0 +1,84 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-lg rounded">
+        <div class="card-header bg-primary text-white text-center">
+          <h3>Inserisci i Dettagli della Casa Vacanza</h3>
+        </div>
+        <div class="card-body">
+          <form id="casaForm" [formGroup]="FormCasa" (ngSubmit)="mergeCasa()">
+            <div class="row mb-3">
+              <!-- Nome -->
+              <div class="col-md-6">
+                <label for="nome" class="form-label">Nome della Casa</label>
+                <input type="text" class="form-control" id="nome" required placeholder="Nome della casa" formControlName="nome">
+              </div>
+
+              <!-- Prezzo -->
+              <div class="col-md-6">
+                <label for="prezzo" class="form-label">Prezzo (€)</label>
+                <input type="number" class="form-control" id="prezzo" required placeholder="Prezzo della casa" formControlName="prezzo">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <!-- Indirizzo -->
+              <div class="col-md-6">
+                <label for="indirizzo" class="form-label">Indirizzo</label>
+                <input type="text" class="form-control" id="indirizzo" required placeholder="Indirizzo della casa" formControlName="indirizzo">
+              </div>
+
+              <!-- Posti Letto -->
+              <div class="col-md-6">
+                <label for="postiLetto" class="form-label">Posti Letto</label>
+                <input type="number" class="form-control" id="postiLetto" required placeholder="Numero di posti letto" formControlName="postiLetto">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <!-- Città -->
+              <div class="col-md-6">
+                <label for="citta" class="form-label">Città</label>
+                <input type="text" class="form-control" id="citta" required placeholder="Città della casa" formControlName="citta">
+              </div>
+
+              <!-- Disponibilità -->
+              <div class="col-md-6">
+                <label for="disponibile" class="form-label">Disponibilità</label>
+                <select class="form-select" id="disponibile" required formControlName="disponibilita">
+                  <option value="true">Disponibile</option>
+                  <option value="false">Non disponibile</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <!-- Regione -->
+              <div class="col-md-6">
+                <label for="regione" class="form-label">Regione</label>
+                <input type="text" class="form-control" id="regione" required placeholder="Regione della casa" formControlName="regione">
+              </div>
+
+              <!-- Immagine URL -->
+              <div class="col-md-6">
+                <label for="immagine" class="form-label">Immagine URL</label>
+                <input type="url" class="form-control" id="immagine" required placeholder="URL immagine della casa" formControlName="immagine">
+              </div>
+            </div>
+
+            <!-- Descrizione -->
+            <div class="mb-3">
+              <label for="descrizione" class="form-label">Descrizione</label>
+              <textarea class="form-control" id="descrizione" rows="4" required placeholder="Descrizione della casa" formControlName="descrizione"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn w-100" [ngClass]="casaDaModificare ? 'btn-warning' : 'btn-primary'" [disabled]="FormCasa.invalid">
+              {{casaDaModificare ? 'Modifica Casa Vacanza' : 'Aggiungi Casa Vacanza'}}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

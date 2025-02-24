@@ -1,0 +1,12 @@
+<div class="container my-4 p-4 border rounded shadow-sm bg-light">
+  <!-- Titolo -->
+  <div class="text-center mb-4">
+    <h3 class="text-primary fw-bold">Lista Prenotazioni</h3>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center">
+    <div *ngFor="let p of filteredPrenotazioni" class="mb-2">
+      <app-prenotazione-single [prenotazione]="p"></app-prenotazione-single>
+    </div>
+  </div>
+</div>

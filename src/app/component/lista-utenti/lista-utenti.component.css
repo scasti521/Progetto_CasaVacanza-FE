@@ -1,0 +1,27 @@
+.container {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Sfondo chiaro */
+  border: 1px solid #dee2e6;
+}
+
+h3 {
+  color: #343a40;
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-custom {
+  transition: transform 0.3s, box-shadow 0.3s; /* Animazione fluida */
+}
+
+.card-custom:hover {
+  transform: translateY(-5px); /* Effetto hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.row.g-4 {
+  gap: 1.5rem; /* Aggiunge uno spazio uniforme tra le card */
+}
+
+.text-secondary {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Effetto ombra al titolo */
+}

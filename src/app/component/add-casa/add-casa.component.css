@@ -1,0 +1,73 @@
+body {
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body {
+  background-color: #ffffff;
+  padding: 25px;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+input, select, textarea {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  font-weight: bold;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .col-md-6 {
+    margin-bottom: 15px; /* Space between columns on small screens */
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 20px;
+  }
+}

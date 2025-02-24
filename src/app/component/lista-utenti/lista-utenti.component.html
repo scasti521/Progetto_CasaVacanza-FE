@@ -1,0 +1,18 @@
+<div class="container my-5 p-4 border rounded shadow-lg bg-white">
+  <div class="text-center mb-4">
+    <h3 class="text-secondary fw-bold border-bottom pb-3">Lista Utenti</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <app-add-utente-small></app-add-utente-small>
+    </div>
+    <div class="col-md-9">
+      <div class="row g-4">
+        <div *ngFor="let u of utenti" class="col-md-5"> <!-- Larghezza delle card -->
+          <app-utente-card [utente]="u" class="card-custom h-100"></app-utente-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+/* Stile personalizzato per le card */
+.card-custom {
+  border-radius: 12px; /* Angoli arrotondati */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animazioni su hover */
+  background-color: #ffffff; /* Sfondo chiaro */
+  margin: 0; /* Rimuove margini extra */
+  padding: 0; /* Rimuove padding extra */
+}
+
+/* Effetto hover per le card */
+.card-custom:hover {
+  transform: translateY(-5px); /* Leggero movimento verso l'alto */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombra più visibile */
+}
+
+/* Stile per l'immagine della card */
+.card-img-top {
+  width: 100%; /* L'immagine occupa tutta la larghezza */
+  height: 200px; /* Altezza fissa */
+  object-fit: cover; /* Ritaglia o scala l'immagine per adattarla */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Stile del titolo */
+.card-title {
+  font-family: 'Poppins', sans-serif; /* Font elegante */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Stile del testo della card */
+.card-text {
+  font-size: 0.9rem;
+  color: #6c757d; /* Grigio tenue */
+  line-height: 1.5;
+}
+
+/* Pulsante "Elimina" */
+.btn-danger {
+  border-radius: 5px; /* Angoli arrotondati */
+  font-weight: bold; /* Testo in grassetto */
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Effetto morbido */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+.modal-dialog {
+  max-width: 90%; /* Modal si adatta al 90% della larghezza dello schermo */
+  width: 800px; /* Impostiamo una larghezza di base per schermi medi */
+}
+
+.modal-body {
+  font-size: 1.1rem;
+  color: #333;
+  padding: 2rem;
+  line-height: 1.6;
+  background-color: #f9f9f9; /* Colore di sfondo chiaro */
+  border-radius: 10px; /* Angoli arrotondati */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  word-wrap: break-word; /* Evita il testo che esce dal contenitore */
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+.modal-body p strong {
+  color: #007bff; /* Colore blu per i titoli */
+}
+
+.modal-body img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem; /* Distanza tra l'immagine e il testo */
+}
+
+.modal-body p:not(:last-child) {
+  border-bottom: 1px solid #ddd; /* Aggiungi una linea sottile tra le informazioni */
+  padding-bottom: 1rem;
+}
+
+.modal-body .row {
+  margin-top: 1.5rem;
+}
+
+.modal-body .row .col-6 {
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-body .row .col-6 span {
+  font-weight: normal;
+  color: #333;
+}
