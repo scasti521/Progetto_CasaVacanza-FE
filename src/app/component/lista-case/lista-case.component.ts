@@ -38,7 +38,7 @@ export class ListaCaseComponent implements OnInit, OnDestroy {
   }
   get ruolo(): boolean {
     // Logica per determinare il ruolo dell'utente
-    return this.utenteService.decodetoken && this.utenteService.decodetoken.ruolo === 0;
+    return this.utenteService.decodetoken && this.utenteService.decodetoken.ruolo === "ROLE_ADMIN";
   }
 
   get isLoggedIn(): boolean {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {catchError, map, Observable, of, Subject, switchMap} from "rxjs";
 import {Prenotazione} from "../models/Prenotazione";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +17,24 @@ export class PrenotazioneService {
 
 
   getPrenotazioni(): Observable<boolean> {
-    return this.http.get<Prenotazione[]>('http://localhost:8080/api/prenotazione/all').pipe(
-      map(prenotazioni => {
-        this.prenotazioni = prenotazioni;
-        console.log('Utenti caricati con successo:', prenotazioni);
-        return true;
-      }),
-      catchError((err: HttpErrorResponse) => {
-        console.error('Errore nel caricamneto delle prenotazioni:', err);
-        return of(false);
-      })
-    );
+    const token = localStorage.getItem("token");
+    console.log(token + " DIO CANE")// Oppure recuperalo da localStorage o AuthService
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<Prenotazione[]>('http://localhost:8080/api/prenotazione/all', { headers })
+      .pipe(
+        map(prenotazioni => {
+          this.prenotazioni = prenotazioni;
+          console.log('Utenti caricati con successo:', prenotazioni);
+          return true;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          console.error('Errore nel caricamento delle prenotazioni:', err);
+          return of(false);
+        })
+      );
   }
 
   creaPrenotazione(nuovaPrenotazione: Prenotazione): Observable<boolean> {

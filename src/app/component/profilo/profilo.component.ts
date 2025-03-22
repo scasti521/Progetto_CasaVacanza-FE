@@ -19,10 +19,16 @@ export class ProfiloComponent implements OnInit {
 
   ngOnInit(): void {
       this.utente = this.utenteService.getUtente();
+      console.log(this.utenteService.getUtente());
+      console.log(this.utente.sub);
   }
 
   getRuolo(): string {
-    if(this.utente.ruolo == '0') {
+
+    console.log(this.utente);
+    console.log(this.utente.ruolo);
+
+    if(this.utente.ruolo == 'ROLE_ADMIN') {
       return 'ADMIN';
     }
     else{

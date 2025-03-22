@@ -80,6 +80,7 @@ export class UtenteService {
       try {
         this.decodetoken = jwtDecode(this.token);
         console.log('Token decoded:', this.decodetoken);
+        const username = this.decodetoken.username;
         const role = this.decodetoken.ruolo;
         const id = this.decodetoken.id;
         console.log('Role:', role);

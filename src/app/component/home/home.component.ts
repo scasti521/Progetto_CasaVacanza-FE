@@ -22,5 +22,4 @@ export class HomeComponent {
   get isLoggedIn(): boolean {
     return !!this.utenteService.token;
   }
-sti
 }
